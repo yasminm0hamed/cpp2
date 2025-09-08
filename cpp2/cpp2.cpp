@@ -2,9 +2,10 @@
 //
 
 #include <iostream>
+#include<string>
 using namespace std;
 #include <cmath>
-
+#include <algorithm>
 
 
 // function without parameters 
@@ -117,7 +118,75 @@ int main() // the main function have to return int datatype
 	cout << trunc(9.5) << endl; //9
 	cout << "=====================================\n";
 
+	cout << 'A'<< endl;
+	cout << tolower('A') << endl;//الفانكشن دي بتستقبل رقم صحيح ف لازم ترجع رقم صحيح ف هتحول الحرف ل اسمول وتجيب ال اسكي  فاليو بتاعته 
+	cout << char(tolower('A')) << endl; // كده هيرجع الحرف سمول 
+	cout << "=====================================\n";
 
+	cout << 'a' << endl;
+	cout << tolower('a') << endl;//الفانكشن دي بتستقبل رقم صحيح ف لازم ترجع رقم صحيح ف هتحول الحرف ل كابتل وتجيب ال اسكي فاليو بتاعته 
+	cout << char(tolower('a')) << endl; // كده هيرجع الحرف كابتل 
+	cout << "=====================================\n";
+
+	// app1 => swap case 
+	cout << " inter your name please \n ";
+	string name;
+	cin >> name; 
+	size(name);// number of characteres in name  
+	
+	cout << " the original name is: " << name<< endl;
+	cout << " the swaped name is: ";
+	for (int i = 0; i < size(name); i++)
+	{
+		if (isupper(name[i]))
+		{
+			cout << char(tolower(name[i]));
+		}
+		else if (islower(name[i]))
+		{
+			cout << char(toupper(name[i]));
+		}
+		
+	}
+
+	cout << "\n=====================================\n";
+
+	//app2 => remove spaces 
+	cout << " inter your full name please \n ";
+	string name2;
+	cin.ignore();
+	getline(cin, name2);// لما عملنا cin بالطريقه العاديه كان مبيتخزنش ف المتغير غير اول كلمه و اول ميشوف مسافه بيقف عشان كدا استخدمنا جيت لاين 
+	size(name2);// number of characteres in name
+	cout << " the original with spaces name is: " << name2 << endl;
+	cout << " the name without spaces is: ";
+
+	for (int i = 0; i < size(name2); i++)
+	{
+		if (isspace(name2[i]))
+		{
+			continue;
+		}
+		else 
+		{
+			cout << name2[i];
+		}
+
+	}
+	cout << "\n=====================================\n";
+
+
+	// to use the following functions we have to use include <algorithm>
+	cout << max(10, 89)<<endl;//89
+	cout << max({ 3,4,5,67,83,8 })<< endl;//83
+	cout << max('a', 'c')<< endl;//c
+	cout << max('a', 'C')<< endl;//a
+	cout << "=====================================\n";
+
+	cout << min(10, 89) << endl;//10
+	cout << min({ 3,4,5,67,83,8 }) << endl;//3
+	cout << min('a', 'c') << endl;//a
+	cout << min('a', 'C') << endl;//C
+	cout << "=====================================\n";
 
 
 
