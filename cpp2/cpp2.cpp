@@ -66,6 +66,39 @@ int calculate3(int n1,int n2)
 	cout << "will not show "; // اي جمله طباعه بعد سطر الريتيرن مش هتتطبع 
 }
 
+// overloading function 
+
+void print(int a, int b)
+{
+	cout << "nummber 1 is: " << a << endl;
+	cout << "nummber 2 is: " << b << endl;
+}
+
+void print(int a, int b, int c)
+{
+	cout << "nummber 1 is: " << a << endl;
+	cout << "nummber 2 is: " << b << endl;
+	cout << "nummber 3 is: " << c << endl;
+}
+
+void print(string a, string b)
+{
+	cout << "text 1 is: " << a << endl;
+	cout << "text 2 is: " << b << endl;
+}
+
+// function recursion 
+int add(int num)
+{
+	if (num == 0)
+	{
+		return 0;
+	}
+	cout << num << " \n ";
+	cout << "======================\n";
+	return  num + add(num - 1);
+
+}
 
 
 
@@ -188,6 +221,18 @@ int main() // the main function have to return int datatype
 	cout << min('a', 'C') << endl;//C
 	cout << "=====================================\n";
 
+	// overloading function 
+
+	print(24, 6);
+	cout << "===============================\n";
+	print(0, 44, 59);
+	cout << "===============================\n";
+	print("yasmin", "mohamed");
+	cout << "===============================\n";
+
+	// function recursion
+	add(5);
+	cout << "===============================\n";
 
 
 
